@@ -26,7 +26,7 @@ class equipeController extends Controller
      */
     public function create()
     {
-        //
+        return view('bleue.enigme1bl');
     }
 
     /**
@@ -37,7 +37,80 @@ class equipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valider = $request->input('enigme1bl');
+        
+        if ($valider == 'DESIGN'){
+            
+           return view('bleue.enigme2bl');
+            
+        }
+        else {
+            
+            return view('bleue.enigme1bl');
+            
+        }
+        
+       
+        //    recupere la valeur de l'input 
+        //comparer la valeur à la valeur attendue
+        //si valeur input = valeur attendue retourne la vue de l'énigme 2 sinon remettre le focus sur l'input
+          
+    }
+    
+    public function verifE1(){
+        
+        $valider = $request->input('enigme1bl');
+        
+        if ($valider == 'DESIGN'){
+            
+            return view('bleue.enigme2bl');
+        }
+        else {
+            
+            return view('bleue.enigme1bl');
+        }
+    }
+    
+    public function verifE2(){
+        
+        $valider = $request->input('enigme2bl');
+        
+        if ($valider == 'TECHNOLOGIE'){
+            
+            return view('bleue.enigme3bl');
+        }
+        else {
+            
+            return view('bleue.enigme2bl');
+        }
+    }
+    
+    public function verifE3(){
+        
+        $valider = $request->input('enigme3bl');
+        
+        if ($valider == 'ACADEMIE'){
+            
+            return view('bleue.enigme4bl');
+        }
+        else {
+            
+            return view('bleue.enigme3bl');
+        }
+    }
+    
+    public function verifE4(){
+        
+        $valider = $request->input('enigme4bl');
+        
+        if ($valider == 'DTA'){
+            
+            return view('bleue.enigme5bl');
+        }
+        else {
+            
+            return view('bleue.enigme4bl');
+        }
     }
 
     /**
@@ -48,35 +121,37 @@ class equipeController extends Controller
      */
     public function show($id)
     {
-        if ($equipe = Equipe::find(1)){
+        $equipe = Equipe::find($id);
             
-            return view('bleue.enigme1bl')->with('equipes', $equipe);
-        }
-        elseif ($equipe = Equipe::find(2)){
-        
-            return view ('rouge.enigme1ro')->with('equipes', $equipe);
-        }
-        elseif ($equipe = Equipe::find(3)){
-            
-            return view ('verte.enigme1ve')->with('equipes', $equipe);
-        }
-        elseif ($equipe = Equipe::find(4)){
-            
-            return view ('jaune.enigme1ja')->with('equipes', $equipe);
-        }
-        elseif ($equipe = Equipe::find(5)){
-            
-            return view ('violette.enigme1vi')->with('equipes', $equipe);
-        }
-        else {
-            //message erreur
-        }
-              
-//         return view ('enigme1');
+            if ($id == 1){
+                
+                return view('bleue.enigme1bl')->with('equipes', $equipe);
+                
+            }
+            elseif ($id == 2){
+                
+                return view ('rouge.enigme1ro')->with('equipes', $equipe);
+                
+            }
+            elseif ($id == 3){
+                
+                return view ('verte.enigme1ve')->with('equipes', $equipe);
+                
+            }
+            elseif ($id == 4){
+                
+                return view ('jaune.enigme1ja')->with('equipes', $equipe);
+                
+            }
+            elseif ($id == 5){
+                
+                return view ('violette.enigme1vi')->with('equipes', $equipe);
+                
+            }
 
 //         $addresse= AddressesModel::find($id);
 //         return view('addresses.detailAddresse')->with('addresse', $addresse);
-        
+     
     }
 
     /**
@@ -112,4 +187,6 @@ class equipeController extends Controller
     {
         //
     }
+   
+    
 }

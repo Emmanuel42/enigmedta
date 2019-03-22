@@ -28,14 +28,8 @@
     
     		<img src="../img/cdm.png" class="img-fluid" alt="Plan de la cour des matières" />
     	  
-    		
             @yield('content')
               
-            <form>				
-				<label for="enigme">Lorsque vous avez trouvé le mot, inscrivez-le ci-dessous puis validez pour passer à l'énigme suivante</label><br>
-				<input id="enigme" type="text" name="mot" placeholder="Votre réponse">
-				<button type="submit">Valider</button>
-			</form>
 		 </div>
     </body>
 </html>

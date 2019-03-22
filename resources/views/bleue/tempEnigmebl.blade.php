@@ -16,7 +16,6 @@
     <div>Numéro : {{ $equipes->id }} </div>
     <div>Couleur : {{ $equipes->couleur }} </div>
     
-    
     	 <div> <h1 class="titre" style="text-align: center; text-decoration: blue underline; padding-bottom: 20px;">Enigme cour des matières</h1></div>
     	  
     	 <div class="plan" style="text-align: center">
@@ -31,11 +30,7 @@
     		
             @yield('content')
               
-            <form>				
-				<label for="enigme">Lorsque vous avez trouvé le mot, inscrivez-le ci-dessous puis validez pour passer à l'énigme suivante</label><br>
-				<input id="enigme" type="text" name="mot" placeholder="Votre réponse">
-				<button type="submit">Valider</button>
-			</form>
+
 		 </div>
     </body>
 </html>
